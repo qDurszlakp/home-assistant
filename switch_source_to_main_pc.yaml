@@ -13,5 +13,5 @@ actions:
     target:
       entity_id: media_player.lg_webos_tv_oled42c31la
     data:
-      source: PC
+      source: HDMI 4
 mode: single
