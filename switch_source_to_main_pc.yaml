@@ -1,0 +1,17 @@
+alias: f16_keypress
+description: ""
+triggers:
+  - trigger: webhook
+    allowed_methods:
+      - POST
+      - PUT
+    local_only: true
+    webhook_id: f16_keypress
+conditions: []
+actions:
+  - action: media_player.select_source
+    target:
+      entity_id: media_player.lg_webos_tv_oled42c31la
+    data:
+      source: PC
+mode: single
