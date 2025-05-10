@@ -1,4 +1,4 @@
-alias: f17_keypress
+alias: Switch to host PC
 description: ""
 triggers:
   - trigger: webhook
@@ -6,12 +6,14 @@ triggers:
       - POST
       - PUT
     local_only: true
-    webhook_id: f17_keypress
+    webhook_id: f16_keypress
 conditions: []
 actions:
   - action: media_player.select_source
     target:
       entity_id: media_player.lg_webos_tv_oled42c31la
     data:
-      source: HDMI 2
+      source: >-
+        {{ state_attr('media_player.lg_webos_tv_oled42c31la', 'source_list') |
+        select('search', 'hdmi 4', ignorecase=True) | list | first }}
 mode: single
